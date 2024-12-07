@@ -1209,22 +1209,24 @@ input, select, textarea {
 				#viewer .slide .caption h2, #viewer .slide .caption h3, #viewer .slide .caption h4, #viewer .slide .caption h5, #viewer .slide .caption h6 {
 					color: #fff;
 				}
-
+			
 			#viewer .slide .image {
-				-moz-transition: opacity 0.5s ease-in-out;
-				-webkit-transition: opacity 0.5s ease-in-out;
-				-ms-transition: opacity 0.5s ease-in-out;
-				transition: opacity 0.5s ease-in-out;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-repeat: no-repeat;
-				background-size: cover;
-				opacity: 0;
+				-moz-transition: opacity 0.5s ease-in-out; /* إضافة انتقال سلس للشفافية في متصفحات Firefox */
+				-webkit-transition: opacity 0.5s ease-in-out; /* إضافة انتقال سلس للشفافية في متصفحات WebKit مثل Chrome و Safari */
+				-ms-transition: opacity 0.5s ease-in-out; /* إضافة انتقال سلس للشفافية في متصفحات Internet Explorer */
+				transition: opacity 0.5s ease-in-out; /* الانتقال الافتراضي للشفافية لجميع المتصفحات الحديثة */
+				position: absolute; /* ضبط موضع الصورة داخل الحاوية */
+				top: 0; /* تثبيت الصورة في أعلى الحاوية */
+				left: 0; /* تثبيت الصورة في أقصى يسار الحاوية */
+				width: 100%; /* عرض الصورة يغطي الحاوية بالكامل */
+				height: 100%; /* ارتفاع الصورة يغطي الحاوية بالكامل */
+				object-fit: contain; /* ملاءمة الصورة داخل الحاوية مع الحفاظ على نسبة العرض إلى الارتفاع */
+				background-repeat: no-repeat; /* منع تكرار الصورة */
+				background-position: center; /* تمركز الصورة داخل الحاوية */
+				background-size: contain; /* احتواء الصورة بالكامل داخل الحاوية دون قص أو تمدد */
+				opacity: 0; /* إخفاء الصورة افتراضيًا عند التحميل */
 			}
-
+				
 			#viewer .slide:before {
 				-moz-animation: spinner 1s linear infinite;
 				-webkit-animation: spinner 1s linear infinite;
@@ -1347,5 +1349,6 @@ input, select, textarea {
 					transition-delay: 0.5s;
 					opacity: 1;
 				}
+			
 
 		}
